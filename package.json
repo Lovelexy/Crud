@@ -1,43 +1,39 @@
 {
-  "name": "desenvolvendo",
-  "version": "1.0.0",
-  "description": "Projeto Aprendendo CRUD",
-  "main": "index.js",
-  "scripts": {
-    "start:crud": "npx ts-node ./core/crud.ts",
-<<<<<<< HEAD
-    "dev:crud": "nodemon --ext ts,tsx --exec 'npm run start:crud'",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-=======
-    "dev:crud": "nodemon --ext ts,tsx --exec npm run start:crud",
->>>>>>> 3a82ef052438e4833affd95df98057d6c4830a61
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-<<<<<<< HEAD
-    "@types/node": "^20.4.9",
-    "@types/react": "18.2.21",
-    "nodemon": "^3.0.1"
-  },
-  "dependencies": {
-    "next": "^13.4.19",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.1.6"
-=======
-    "@types/node": "^20.5.1",
-    "@types/uuid": "^9.0.2",
-    "nodemon": "^3.0.1"
-  },
-  "dependencies": {
-    "typescript": "^5.1.6",
-    "uuid": "^9.0.0"
->>>>>>> 3a82ef052438e4833affd95df98057d6c4830a61
+    "name": "aulas-crudcomqualidade.io",
+    "version": "1.0.0",
+    "description": "Projeto criando um CRUD com qualidade!",
+    "main": "index.js",
+    "scripts": {
+      "start:crud": "npx ts-node ./core/crud.ts",
+      "dev:crud": "nodemon --ext ts,tsx --exec 'npm run start:crud'",
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/devsoutinho/aulas-crudcomqualidade.io.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/devsoutinho/aulas-crudcomqualidade.io/issues"
+    },
+    "homepage": "https://github.com/devsoutinho/aulas-crudcomqualidade.io#readme",
+    "devDependencies": {
+      "@types/node": "^18.15.5",
+      "@types/react": "18.0.29",
+      "@types/uuid": "^9.0.1",
+      "nodemon": "^2.0.21"
+    },
+    "dependencies": {
+      "next": "^13.2.4",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "typescript": "^5.0.2",
+      "uuid": "^9.0.0"
+    }
   }
-}
