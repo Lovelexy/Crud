@@ -9,14 +9,9 @@
     {
       "id": "4b1c91bf-320e-4615-800f-c88197351981",
       "date": "2023-08-20T19:59:02.034Z",
-      "content": "Primeira TODO",
-      "done": false
-    },
-    {
-      "id": "7c624fc5-9c88-4499-af26-01d419454b8b",
-      "date": "2023-08-20T19:59:02.042Z",
-      "content": "Atualizada!",
+      "content": "Segunda TODO",
       "done": false
     }
+    
   ]
 }

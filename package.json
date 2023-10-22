@@ -4,36 +4,42 @@
     "description": "Projeto criando um CRUD com qualidade!",
     "main": "index.js",
     "scripts": {
-      "start:crud": "npx ts-node ./core/crud.ts",
-      "dev:crud": "nodemon --ext ts,tsx --exec 'npm run start:crud'",
-      "dev": "next dev",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start:crud": "npx ts-node ./core/crud.ts",
+        "dev:crud": "nodemon --ext ts,tsx --exec 'npm run start:crud'",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/devsoutinho/aulas-crudcomqualidade.io.git"
+        "type": "git",
+        "url": "git+https://github.com/devsoutinho/aulas-crudcomqualidade.io.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/devsoutinho/aulas-crudcomqualidade.io/issues"
+        "url": "https://github.com/devsoutinho/aulas-crudcomqualidade.io/issues"
     },
     "homepage": "https://github.com/devsoutinho/aulas-crudcomqualidade.io#readme",
     "devDependencies": {
-      "@types/node": "^18.15.5",
-      "@types/react": "18.0.29",
-      "@types/uuid": "^9.0.1",
-      "nodemon": "^2.0.21"
+        "@next/eslint-plugin-next": "^13.5.5",
+        "@types/node": "^18.15.5",
+        "@types/react": "18.0.29",
+        "@types/uuid": "^9.0.1",
+        "@typescript-eslint/eslint-plugin": "^6.7.5",
+        "@typescript-eslint/parser": "^6.7.5",
+        "eslint": "^8.51.0",
+        "eslint-plugin-react": "^7.33.2",
+        "nodemon": "^2.0.21",
+        "prettier": "3.0.3"
     },
     "dependencies": {
-      "next": "^13.2.4",
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "typescript": "^5.0.2",
-      "uuid": "^9.0.0"
+        "next": "^13.2.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^5.0.2",
+        "uuid": "^9.0.0"
     }
-  }
+}

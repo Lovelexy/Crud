@@ -1,29 +1,15 @@
+/* eslint-disable no-console */
 import fs from "fs"; // ES6
-<<<<<<< HEAD
- 
-// const fs = require("fs"); - CommonJS
-const DB_FILE_PATH = "./CORE/DB";
-
-console.log ("[CRUD]");
-
-function create(content: string) {
-// salvar o content no sistema
-
-fs.writeFileSync(DB_FILE_PATH,content)
-
-    return content;
-}
-
-console.log(create("Hoje eu preciso estudar um pouco de Dev Soutinho!"));
-=======
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 // const fs = require("fs"); - CommonJS
 const DB_FILE_PATH = "./core/db";
 
-console.log("[CRUD]");
+// console.log("[CRUD]");
+
+type UUID = string;
 
 interface Todo {
-  id: string;
+  id: UUID;
   date: string;
   content: string;
   done: boolean;
@@ -37,54 +23,88 @@ function create(content: string): Todo {
     done: false,
   };
 
-  const todos: Array<Todo> = [
-    ...read(),
-    todo,
-  ];
+  const todos: Array<Todo> = [...read(), todo];
 
   // salvar o content no sistema
-  fs.writeFileSync(DB_FILE_PATH, JSON.stringify({
-    todos,
-    dogs: [],
-  }, null, 2));
+  fs.writeFileSync(
+    DB_FILE_PATH,
+    JSON.stringify(
+      {
+        todos,
+        dogs: [],
+      },
+      null,
+      2
+    )
+  );
   return todo;
 }
 
-function read(): Array<Todo> {
+export function read(): Array<Todo> {
   const dbString = fs.readFileSync(DB_FILE_PATH, "utf-8");
   const db = JSON.parse(dbString || "{}");
-  if(!db.todos) { // Fail Fast Validations
+  if (!db.todos) {
+    // Fail Fast Validations
     return [];
   }
 
   return db.todos;
 }
 
-function update(id: string, partialTodo: Partial<Todo>): Todo {
+function update(id: UUID, partialTodo: Partial<Todo>): Todo {
   let updatedTodo;
   const todos = read();
   todos.forEach((currentTodo) => {
     const isToUpdate = currentTodo.id === id;
-    if(isToUpdate) {
+    if (isToUpdate) {
       updatedTodo = Object.assign(currentTodo, partialTodo);
     }
   });
 
-  fs.writeFileSync(DB_FILE_PATH, JSON.stringify({
-    todos,
-  }, null, 2));
+  fs.writeFileSync(
+    DB_FILE_PATH,
+    JSON.stringify(
+      {
+        todos,
+      },
+      null,
+      2
+    )
+  );
 
-  if(!updatedTodo) {
-    throw new Error("Please, provide another ID!")
+  if (!updatedTodo) {
+    throw new Error("Please, provide another ID!");
   }
 
   return updatedTodo;
 }
 
-function updateContentById(id: string, content: string): Todo {
+function updateContentById(id: UUID, content: string): Todo {
   return update(id, {
     content,
-  })
+  });
+}
+
+function deleteById(id: UUID) {
+  const todos = read();
+
+  const todosWithoutOne = todos.filter((todo) => {
+    if(id === todo.id) {
+      return false;
+    }
+    return true;
+  });
+
+  fs.writeFileSync(
+    DB_FILE_PATH,
+    JSON.stringify(
+      {
+        todos: todosWithoutOne,
+      },
+      null,
+      2
+    )
+  );
 }
 
 function CLEAR_DB() {
@@ -92,14 +112,16 @@ function CLEAR_DB() {
 }
 
 // [SIMULATION]
-CLEAR_DB();
-create("Primeira TODO");
-create("Primeira TODO");
-const terceiraTodo = create("Segunda TODO");
-// update(terceiraTodo.id, {
-//   content: "Atualizada!",
-//   done: true,
-// });
-updateContentById(terceiraTodo.id, "Atualizada!")
-console.log(read());
->>>>>>> 3a82ef052438e4833affd95df98057d6c4830a61
+// CLEAR_DB();
+// create("Primeira TODO");
+// const secondTodo = create("Segunda TODO");
+// deleteById(secondTodo.id);
+// const thirdTodo = create("Terceira TODO");
+// // update(thirdTodo.id, {
+// //   content: "Atualizada!",
+// //   done: true,
+// // });
+// updateContentById(thirdTodo.id, "Atualizada!")
+// const todos = read();
+// console.log(todos);
+// console.log(todos.length);
